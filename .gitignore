@@ -1,0 +1,8 @@
+# Ignore these.
+.idea/
+docker-compose.yml
+logs/
+code/
+
+# Not these
+!logs/.gitkeep

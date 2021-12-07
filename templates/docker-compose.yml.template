@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+    web:
+        container_name: %project.name%-web
+        image: ubuntu2004-apache-php8
+        build:
+            context: ./env/images/ubuntu2004-apache-php8
+        ports:
+            - 8080:80
+        volumes:
+            - %project.path%:/var/www/site/
+        networks:
+            - %project.name%-net
+
+    db:
+        container_name: %project.name%-db
+        stdin_open: true
+        image: mariadb:latest
+        ports:
+            - 3336:3306
+        command: >
+            --character-set-server=utf8mb4
+            --collation-server=utf8mb4_bin
+            --innodb_file_per_table=On
+            --wait-timeout=28800
+        environment:
+            MYSQL_ROOT_PASSWORD: "password"
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            MYSQL_DATABASE: main
+        networks:
+            - %project.name%-net
+
+networks:
+    %project.name%-net:
