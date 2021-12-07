@@ -2,14 +2,11 @@ version: "3.7"
 
 services:
     web:
-        container_name: %project.name%-web
-        image: ubuntu2004-apache-php8
-        build:
-            context: ./env/images/ubuntu2004-apache-php8
-        ports:
-            - 8080:80
+        container_name: %project.name%-%project.type%
+        stdin_open: true
+        image: node:latest
         volumes:
-            - %project.path%:/var/www/site/
+            - %project.path%:/app
         networks:
             - %project.name%-net
 

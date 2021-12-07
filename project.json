@@ -1,0 +1,8 @@
+{
+  "type": "app",
+  "name": "writer-bot",
+  "repo": "git@github.com:writer-bot/bot.git",
+  "branch": "main",
+  "path": "./code/",
+  "submodules": []
+}
