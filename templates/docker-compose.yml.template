@@ -5,6 +5,7 @@ services:
         container_name: %project.name%-%project.type%
         stdin_open: true
         image: node:latest
+        working_dir: /app
         volumes:
             - %project.path%:/app
         networks:

@@ -4,5 +4,6 @@
   "repo": "git@github.com:writer-bot/bot.git",
   "branch": "main",
   "path": "./code/",
-  "submodules": []
+  "submodules": [],
+  "working_dir": "/app"
 }
