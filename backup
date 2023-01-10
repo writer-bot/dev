@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run the script from the env submodule.
+source $(pwd)'/env/scripts/backup.sh'

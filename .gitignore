@@ -3,6 +3,8 @@
 docker-compose.yml
 logs/
 code/
+backups/*
 
 # Not these
 !logs/.gitkeep
+!backups/.gitkeep
