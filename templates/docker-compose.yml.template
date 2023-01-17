@@ -6,15 +6,20 @@ services:
         stdin_open: true
         image: node:latest
         working_dir: /app
+        restart: on-failure
         volumes:
             - %project.path%:/app
         networks:
             - %project.name%-net
+        depends_on:
+            - db
+        entrypoint: ./src/go
 
     db:
         container_name: %project.name%-db
         stdin_open: true
         image: mariadb:latest
+        restart: on-failure
         ports:
             - 3336:3306
         command: >
