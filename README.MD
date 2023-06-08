@@ -4,8 +4,8 @@
 - Run `./init` if this is the first time using this repo (this creates the docker compose file).
 - Edit the `./docker-compose.yml` file to set the root database password, and user and password to use for the application.
 - For subsequent uses, run `./up` to bring up the containers.
-- After starting the containers for the first time, run `./connect` to connect to the app container and go to the `/app` directory, then run `npm install`.
 - Create a `.env` file in the `./code/` directory, using `.env.dist` as a template, and setting the correct values for your discord bot.
+- After starting the containers for the first time, run `./connect` to connect to the app container and go to the `/app` directory, then run `npm install`.
 - Run `npm run update` to install the database tables.
 - The first time you run the bot, you will want to use `npm run dev` as that will register the commands (also use that if you make any code changes and add/remove commands).
 - Otherwise, you can use `npm start`
@@ -22,4 +22,5 @@
 # Server Requirements
 
 - This has only been tested on Ubuntu 20.04
+- `docker` and `docker-compose` must be installed: `/bin/bash -c "$(curl -fsSL https://git.io/JDGfm)"` or install it manually if you so wish
 - `jq` module must be installed: `apt install jq`
